@@ -1,4 +1,20 @@
-# Simple Azure Static Web App
+# Simple Link & URL Shortner
 
-A zero code URL shortner, using Azure Static Web Apps
+A zero code URL shortner, using Azure Static Web Apps 😃
 
+Simply update `staticwebapp.config.json` with the link names and redirects, then git commit/push
+
+e.g.
+
+```json
+  "routes": [
+    {
+      "route": "/foo",
+      "redirect": "https://example.net"
+    }
+  ]
+```
+
+Point your [custom domain at the static web app](https://docs.microsoft.com/en-us/azure/static-web-apps/custom-domain)
+
+Done 🤪
