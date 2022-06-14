@@ -6,6 +6,14 @@
     {
       "route": "/tool-lib",
       "redirect": "https://raw.githubusercontent.com/benc-uk/tools-install/master/_lib.sh"
+    },
+    {
+      "route": "/kube-primer",
+      "redirect": "https://github.com/benc-uk/kube-primer"
+    },
+    {
+      "route": "/kube-ws",
+      "redirect": "https://kube-workshop.benco.io/"
     }
   ]
 }
