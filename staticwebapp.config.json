@@ -1,0 +1,11 @@
+{
+  "navigationFallback": {
+    "rewrite": "/index.html"
+  },
+  "routes": [
+    {
+      "route": "/tool-lib",
+      "redirect": "https://raw.githubusercontent.com/benc-uk/tools-install/master/_lib.sh"
+    }
+  ]
+}
