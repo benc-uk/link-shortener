@@ -4,7 +4,7 @@
   },
   "routes": [
     {
-      "route": "/tool-lib",
+      "route": "/lib",
       "redirect": "https://raw.githubusercontent.com/benc-uk/tools-install/master/_lib.sh"
     },
     {

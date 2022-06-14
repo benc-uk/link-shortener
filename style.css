@@ -1,0 +1,16 @@
+.box {
+  display: block;
+  padding: 3rem;
+  margin: 0 auto;
+  margin-top: 3rem;
+  width: 60%;
+  text-align: center;
+  background-color: #f2f2f2;
+  border: 2px solid rgb(27, 48, 139);
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px #ccc;
+  font-size: 1.8rem;
+}
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

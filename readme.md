@@ -1,6 +1,6 @@
-# Simple Link & URL Shortner
+# Simple Link & URL Shortener
 
-A zero code URL shortner, using Azure Static Web Apps 😃
+A zero code URL shortener, using Azure Static Web Apps 😃
 
 Simply update `staticwebapp.config.json` with the link names and redirects, then git commit/push
 
