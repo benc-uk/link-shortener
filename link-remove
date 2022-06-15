@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+set -e
+
+which jq >/dev/null 2>&1 || { echo >&2 "💥 jq is required but not installed!"; exit 1; }
+
+configFile="staticwebapp.config.json"
+
+name="$1"
+
+if [ -z "$name" ]; then
+  echo "Usage: link-add <shortname> "
+  exit 1
+fi
+
+if [ -z "$(jq -r ".routes[] | select(.route == \"/$name\")" "$configFile")" ]; then
+  echo "💥 Link with shortname $name doesn't exist"
+  exit 1
+fi
+
+jq -r "del(.routes[] | select(.route == \"/$name\"))" $configFile > $configFile.tmp && mv $configFile.tmp $configFile
+
+echo -e "\e[34m»»» 🌐 Short link removed: \e[33m$name"
+echo -e "\e[34m»»» ⌚ Wait approx 1 minute for the change to be active\e[0m"
+
+git add $configFile > /dev/null 2>&1
+git commit -m "Removed link $name" > /dev/null 2>&1
+git push > /dev/null 2>&1
