@@ -18,10 +18,6 @@
     {
       "route": "/link-shortener",
       "redirect": "https://github.com/benc-uk/link-shortener"
-    },
-    {
-      "route": "/goat",
-      "redirect": "https://www.britannica.com/animal/goat"
     }
   ]
 }
