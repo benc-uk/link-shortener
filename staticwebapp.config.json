@@ -18,6 +18,10 @@
     {
       "route": "/link-shortener",
       "redirect": "https://github.com/benc-uk/link-shortener"
+    },
+    {
+      "route": "/goat",
+      "redirect": "https://example.net"
     }
   ]
 }
