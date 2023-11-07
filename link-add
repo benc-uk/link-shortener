@@ -32,4 +32,4 @@ git add $configFile > /dev/null 2>&1
 git commit -m "Added link $name -> $url" > /dev/null 2>&1
 git push > /dev/null 2>&1
 
-swa deploy --no-use-
+swa deploy --no-use-keychain > /dev/null 2>&1
