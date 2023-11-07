@@ -1,0 +1,31 @@
+{
+  "navigationFallback": {
+    "rewrite": "/fallback.html"
+  },
+  "routes": [
+    {
+      "route": "/lib",
+      "redirect": "https://raw.githubusercontent.com/benc-uk/tools-install/master/_lib.sh"
+    },
+    {
+      "route": "/kube-primer",
+      "redirect": "https://github.com/benc-uk/kube-primer"
+    },
+    {
+      "route": "/kube-ws",
+      "redirect": "https://kube-workshop.benco.io/"
+    },
+    {
+      "route": "/link-shortener",
+      "redirect": "https://github.com/benc-uk/link-shortener"
+    },
+    {
+      "route": "/nanomon",
+      "redirect": "https://nanomon-frontend.politetree-02e1dfab.uksouth.azurecontainerapps.io/"
+    },
+    {
+      "route": "/bundle",
+      "redirect": "https://crewphoton.blob.core.windows.net/share/LSEG-VDI-Bundle.zip?sp=r&st=2023-11-03T18:09:01Z&se=2024-04-10T01:09:01Z&spr=https&sv=2022-11-02&sr=b&sig=C3rNu99%2B6M8nRm08oJvava5seh8MbDeyZPCBUjgUxBs%3D"
+    }
+  ]
+}
