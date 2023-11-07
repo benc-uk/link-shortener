@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+set -e
+
+which jq >/dev/null 2>&1 || { echo >&2 "💥 jq is required but not installed!"; exit 1; }
+
+configFile="staticwebapp.config.json"
+
+name="$1"
+url="$2"
+
+if [ -z "$name" ] || [ -z "$url" ]; then
+  echo "Usage: link-add <shortname> <url>"
+  exit 1
+fi
+
+if ! [[ "$url" =~ ^(http|https):// ]]; then
+  echo "💥 URL must start with http:// or https://"
+  exit 1
+fi
+
+if [ -n "$(jq -r ".routes[] | select(.route == \"/$name\")" "$configFile")" ]; then
+  echo "💥 Link with shortname $name already exists"
+  exit 1
+fi
+
+jq ".routes += [{\"route\": \"/${name}\", \"redirect\": \"${url}\"}]" $configFile > $configFile.tmp && mv $configFile.tmp $configFile
+
+echo -e "\e[34m»»» 🌐 Short link added: \e[33m$name \e[0m-> \e[32m$url"
+echo -e "\e[34m»»» ⌚ Wait approx 1 minute for the link to be active\e[0m"
+
+git add $configFile > /dev/null 2>&1
+git commit -m "Added link $name -> $url" > /dev/null 2>&1
+git push > /dev/null 2>&1
+
+swa deploy --no-use-
